@@ -3,12 +3,36 @@
  */
 package ch.teko;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
+import java.io.File;
+import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class App extends Application{
+
+    
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Rail Traffic");
+        try {
+            File fxmlFile = new File ("./src/main/java/ch/teko/RailTrafficView.fxml");
+            Parent root = FXMLLoader.load(fxmlFile.toURI().toURL());
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
+
+
 }
