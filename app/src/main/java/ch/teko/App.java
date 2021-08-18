@@ -21,6 +21,9 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) {
+        Request request = new Request();
+        request.doCall("100");
+
         primaryStage.setTitle("Rail Traffic");
         try {
             File fxmlFile = new File ("./src/main/java/ch/teko/RailTrafficView.fxml");
