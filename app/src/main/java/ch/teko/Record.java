@@ -7,4 +7,8 @@ public class Record {
     private String recordid;
     private Field fields;
     private String record_timestamp;
+
+    public Field getFields () {
+        return fields;
+    }
 }
