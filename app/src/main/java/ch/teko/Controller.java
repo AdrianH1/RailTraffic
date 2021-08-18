@@ -1,8 +1,6 @@
 package ch.teko;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,17 +11,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Controller {
     @FXML private ComboBox <Integer> comboxMessages;
-    @FXML private TableView tblContent;
-    @FXML private TableColumn tblCTime;
-    @FXML private TableColumn tblCDate;
-    @FXML private TableColumn tblCTitle;
+    @FXML private TableView <Field> tblContent;
+    @FXML private TableColumn<Field, String> tblCTime;
+    @FXML private TableColumn<Field, String> tblCDate;
+    @FXML private TableColumn<Field, String> tblCTitle;
     private ArrayList<Field> fields = new ArrayList<Field>();
 
     @FXML
     public void initialize () {
-        tblCTime.setCellValueFactory(new PropertyValueFactory<>("time"));
-        tblCDate.setCellValueFactory(new PropertyValueFactory<>("date"));
-        tblCTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        tblCTime.setCellValueFactory(new PropertyValueFactory<Field, String>("time"));
+        tblCDate.setCellValueFactory(new PropertyValueFactory<Field, String>("date"));
+        tblCTitle.setCellValueFactory(new PropertyValueFactory<Field, String>("title"));
     }
 
 
