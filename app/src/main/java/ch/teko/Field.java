@@ -14,6 +14,9 @@ public class Field {
     private String link;
     private String published;
 
+    public String getTimestamp(){
+        return validitybegin;
+    }
 
     public String getDate () {
         String date = new String();
@@ -50,6 +53,6 @@ public class Field {
     }
 
     public String getDescription () {
-        return description;
+        return description.substring(24);
     }
 }

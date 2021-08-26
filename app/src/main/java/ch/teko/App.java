@@ -28,7 +28,7 @@ public class App extends Application{
             FXMLLoader loader = new FXMLLoader(fxmlFile.toURI().toURL());
             Parent root = loader.load();
             Controller controller = (Controller)loader.getController();
-            controller.makeRequest();
+            controller.startService();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();

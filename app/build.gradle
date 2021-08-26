@@ -15,6 +15,9 @@ plugins {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+    flatDir {
+        dirs 'src/main/lib'
+    }
 }
 
 dependencies {
@@ -24,6 +27,7 @@ dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.0-jre'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.plushaze.traynotification:TrayTester:0.3'
 }
 
 application {
