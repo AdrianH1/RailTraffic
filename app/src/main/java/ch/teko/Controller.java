@@ -17,6 +17,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import tray.notification.TrayNotification;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 public class Controller {
     @FXML private ComboBox <Integer> comboxMessages;
@@ -48,10 +50,8 @@ public class Controller {
                 if (fieldsCurr.size() != fieldsNew.size()){
                     //Notification
                     TrayNotification tray = new TrayNotification();
-                    Notification notification = Notifications.SUCCESS;
-                    tray.setTitle("New Entry");
-                    tray.setMessage("Messages updated successfull");
-                    tray.setNotification(notification);
+                    NotificationType notification = NotificationType.SUCCESS;
+                    tray.setTray("New Entry", "Messages updated successfully", notification);
                     tray.showAndWait();
                 }
                 fieldsCurr = fieldsNew;
@@ -61,12 +61,6 @@ public class Controller {
         } else {
             fieldsCurr = fieldsNew;
             tblContent.getItems().addAll(fieldsNew);
-            TrayNotification tray = new TrayNotification();
-            Notification notification = Notifications.SUCCESS;
-            tray.setTitle("New Entry");
-            tray.setMessage("Messages updated successfull");
-            tray.setNotification(notification);
-            tray.showAndWait();
         }
     }
 
